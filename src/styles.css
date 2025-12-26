@@ -100,7 +100,64 @@ body {
 }
 
 
-#content {
+#content-section {
     flex: 1;
     height: 100vh;
+    padding: 100px 10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#inner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    width: 600px;
+}
+
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 10px 15px 10px;
+}
+
+.task .circle {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    height: 25px;
+    width: 25px;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+}
+
+.task-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 300;
+}
+
+.task-buttons {
+    margin-left: auto;
+}
+
+#add-task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+    color: #DAD7CD;
 }
