@@ -2,8 +2,105 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
 }
 
-h1 {
-    color: red;
+body {
+    display: flex;
+}
+
+#sidebar {
+    flex: 0 0 400px;
+    gap: 40px;
+    background-color: rgba(218, 215, 205, 0.1);
+    height: 100vh;
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#header #profile-picture {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#header-names {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#header-names div:nth-child(1) { font-weight: bold; }
+#header-names div:nth-child(2) { font-weight: 200; }
+
+#header svg {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+#views {
+    display: flex;
+    flex-direction: column;
+}
+
+#views > div {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+#views > div[selected="true"] {
+    background-color: rgba(163, 177, 138, 0.4);
+    color: #344E41;
+}
+
+#views > #add-view {
+    color: #dad7cd;
+}
+
+#projects-header {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 30px;
+}
+
+#projects > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+
+#content {
+    flex: 1;
+    height: 100vh;
 }
