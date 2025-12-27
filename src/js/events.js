@@ -10,16 +10,15 @@ const eventBinder = (function() {
         })
     }
 
-    function bindAddTask(inputFunction) {
-        const addTask = document.querySelector("#add-task");
-        addTask.addEventListener("click", () => {
-            inputFunction();
+    function bindObject(object, func) {
+        object.addEventListener("click", () => {
+            func();
         })
     }
 
 
 
-    return {bindViews, bindAddTask};
+    return {bindViews, bindObject};
 })();
 
 export default eventBinder;

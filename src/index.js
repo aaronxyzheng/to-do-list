@@ -9,12 +9,9 @@ class App {
 
     bindEvents() {
         eventBinder.bindViews();
-        eventBinder.bindAddTask(this.placeForm);
-    }
 
-    placeForm() {
         const layer = componentBuilder.buildForm();
-        layer.placeLayer();
+        eventBinder.bindObject(document.querySelector("#add-task"), layer.placeLayer); //Binding the Add Task button
     }
 }
 
