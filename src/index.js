@@ -1,9 +1,20 @@
 import "./styles.css";
 import eventBinder from "./js/events.js";
+import componentBuilder from "./js/components.js";
 
 class App {
     constructor() {
-        eventBinder.bindEvents();
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        eventBinder.bindViews();
+        eventBinder.bindAddTask(this.placeForm);
+    }
+
+    placeForm() {
+        const layer = componentBuilder.buildForm();
+        layer.placeLayer();
     }
 }
 

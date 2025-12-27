@@ -1,12 +1,5 @@
 const eventBinder = (function() {
 
-    function bindEvents() {
-        bindViews();
-        //bindProjects();
-        //bindTasks();
-        bindAddTask();
-    }
-
     function bindViews() {
         const views = document.querySelectorAll(".view");
         views.forEach(view => {
@@ -17,11 +10,16 @@ const eventBinder = (function() {
         })
     }
 
-    
+    function bindAddTask(inputFunction) {
+        const addTask = document.querySelector("#add-task");
+        addTask.addEventListener("click", () => {
+            inputFunction();
+        })
+    }
 
 
 
-    return {bindEvents};
+    return {bindViews, bindAddTask};
 })();
 
 export default eventBinder;
