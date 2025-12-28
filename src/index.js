@@ -1,6 +1,6 @@
 import "./styles.css";
-import eventBinder from "./js/events.js";
-import componentBuilder from "./js/components.js";
+import eventBinder from "./js/events-binder.js";
+import formBuilder from "./js/dom-components/task-form.js";
 
 class App {
     constructor() {
@@ -10,9 +10,9 @@ class App {
 
     bindEvents() {
         eventBinder.bindViews();
-        // Binding the Add Events button
-        const layer = componentBuilder.buildForm();
-        eventBinder.bindObject(document.querySelector("#add-task"), layer.placeLayer); //Binding the Add Task button
+        // Binding the Add Task button
+        const addTaskButton = document.querySelector("#add-task")
+        eventBinder.bindObject(addTaskButton, formBuilder.placeForm);
     }
 }
 
