@@ -1,5 +1,3 @@
-import eventBinder from "../events-binder.js";
-
 const formBuilder = (function() {
     function placeForm() {
         const layer = buildForm();
@@ -25,11 +23,36 @@ const formBuilder = (function() {
         `;
         layer.id = "form-layer";
 
-        eventBinder.bindFormLayer(layer);
-        eventBinder.bindFormButton(layer, layer.querySelector("button"));
+        bindFormLayer(layer);
+        bindFormButton(layer);
         formPreventDefault(layer);
 
         return layer;
+    }
+
+    function bindFormLayer(layer) {
+        layer.addEventListener("click", (e) => {
+            if (e.target === layer) {
+                layer.remove();
+            }
+        })
+    }
+
+    function bindFormButton(layer) {
+        const button = layer.querySelector("button");
+
+        button.addEventListener("click", () => {
+            const taskName = document.querySelector("#task-name").value;
+            const taskDate = document.querySelector("#task-date").value;
+            const taskProject = document.querySelector("#task-project").value;
+
+            const newTask = new Task(taskName, taskDate, taskProject);
+            const newTaskElement = buildTaskElement(newTask);
+
+            document.querySelector("#tasks").appendChild(newTaskElement);
+
+            layer.remove();
+        })
     }
 
     function formPreventDefault(layer) {

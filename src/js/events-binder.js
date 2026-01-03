@@ -1,4 +1,4 @@
-import buildTaskElement from "./dom-components/task-element";
+import buildTaskElement from "./dom-components/task.js";
 import Task from "./objects/Task";
 
 const eventBinder = (function() {
@@ -13,38 +13,13 @@ const eventBinder = (function() {
         })
     }
 
-    function bindFormButton(layer, button) {
-        button.addEventListener("click", () => {
-            const taskName = document.querySelector("#task-name").value;
-            const taskDate = document.querySelector("#task-date").value;
-            const taskProject = document.querySelector("#task-project").value;
-
-            const newTask = new Task(taskName, taskDate, taskProject);
-            const newTaskElement = buildTaskElement(newTask);
-
-            document.querySelector("#tasks").appendChild(newTaskElement);
-
-            layer.remove();
-        })
-    }
-
-    function bindFormLayer(layer) {
-        layer.addEventListener("click", (e) => {
-            if (e.target === layer) {
-                layer.remove();
-            }
-        })
-    }
-
     function bindObject(object, func) {
         object.addEventListener("click", () => {
             func();
         })
     }
-
-
-
-    return {bindViews, bindObject, bindFormButton, bindFormLayer};
+    
+    return {bindViews, bindObject};
 })();
 
 export default eventBinder;

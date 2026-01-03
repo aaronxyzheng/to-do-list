@@ -141,6 +141,7 @@ body {
 
 .task {
     display: flex;
+    position: relative;
     gap: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 15px 10px;
@@ -169,6 +170,50 @@ body {
 .task-buttons {
     margin-left: auto;
 }
+
+.calendarInput {
+    position: absolute;
+    top: 500px;
+}
+
+.overflow-menu {
+    --task-box-width: 150px;
+
+    position: absolute;
+    top: 40px;
+    left: calc(600px - var(--task-box-width) + calc(var(--task-box-width)/2 - 20px));
+
+    width: var(--task-box-width);
+
+    background-color: white;
+    box-shadow: 0 0 3px #999;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.overflow-menu div:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.overflow-menu > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 0px 15px 15px;
+}
+
+.overflow-menu-delete {
+    color: #E53935;
+}
+
+.delete-icon {
+    height: 20px;
+    width: 20px;
+    fill: currentColor;
+}
+
 
 #add-task {
     display: flex;
